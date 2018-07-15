@@ -13,6 +13,8 @@ class GameViewController: UIViewController {
 
     var scnView: SCNView!
     var scnScene: SCNScene!
+    var horizontalCamera: SCNNode!
+    var verticalCamera: SCNNode!
     
     var game = GameHelper.sharedInstance
     
@@ -39,6 +41,10 @@ class GameViewController: UIViewController {
     }
     
     func setupNodes() {
+        horizontalCamera = scnScene.rootNode.childNode(withName: "HorizontalCamera", recursively: true)!
+        verticalCamera = scnScene.rootNode.childNode(withName: "VerticalCamera", recursively: true)!
+        
+        scnScene.rootNode.addChildNode(game.hudNode)
     }
     
     func setupSounds() {
@@ -46,9 +52,21 @@ class GameViewController: UIViewController {
     
     override var shouldAutorotate: Bool { return true }
     override var prefersStatusBarHidden: Bool { return true }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        let deviceOrientation = UIDevice.current.orientation
+        
+        switch (deviceOrientation) {
+        case .portrait:
+            scnView.pointOfView = verticalCamera
+        default:
+            scnView.pointOfView = horizontalCamera
+        }
+    }
 }
 
 extension GameViewController: SCNSceneRendererDelegate {
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+        game.updateHUD()
     }
 }
