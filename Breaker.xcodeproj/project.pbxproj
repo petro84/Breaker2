@@ -8,22 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		DCC6490A20FBF60E0012D27A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC6490920FBF60E0012D27A /* AppDelegate.swift */; };
-		DCC6490C20FBF60E0012D27A /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = DCC6490B20FBF60E0012D27A /* art.scnassets */; };
 		DCC6490E20FBF60E0012D27A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC6490D20FBF60E0012D27A /* GameViewController.swift */; };
 		DCC6491120FBF60E0012D27A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCC6490F20FBF60E0012D27A /* Main.storyboard */; };
 		DCC6491320FBF6110012D27A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCC6491220FBF6110012D27A /* Assets.xcassets */; };
 		DCC6491620FBF6110012D27A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCC6491420FBF6110012D27A /* LaunchScreen.storyboard */; };
+		DCC6491E20FC022D0012D27A /* Breaker.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = DCC6491D20FC022C0012D27A /* Breaker.scnassets */; };
+		DCC6492420FC024E0012D27A /* SCNVector3+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC6492020FC024E0012D27A /* SCNVector3+Extensions.swift */; };
+		DCC6492520FC024E0012D27A /* GameUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC6492120FC024E0012D27A /* GameUtils.swift */; };
+		DCC6492620FC024E0012D27A /* GameHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC6492220FC024E0012D27A /* GameHelper.swift */; };
+		DCC6492720FC024E0012D27A /* SCNAction+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC6492320FC024E0012D27A /* SCNAction+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DCC6490620FBF60E0012D27A /* Breaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Breaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCC6490920FBF60E0012D27A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DCC6490B20FBF60E0012D27A /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		DCC6490D20FBF60E0012D27A /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		DCC6491020FBF60E0012D27A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DCC6491220FBF6110012D27A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCC6491520FBF6110012D27A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DCC6491720FBF6110012D27A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCC6491D20FC022C0012D27A /* Breaker.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Breaker.scnassets; sourceTree = "<group>"; };
+		DCC6492020FC024E0012D27A /* SCNVector3+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNVector3+Extensions.swift"; sourceTree = "<group>"; };
+		DCC6492120FC024E0012D27A /* GameUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameUtils.swift; sourceTree = "<group>"; };
+		DCC6492220FC024E0012D27A /* GameHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameHelper.swift; sourceTree = "<group>"; };
+		DCC6492320FC024E0012D27A /* SCNAction+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SCNAction+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +64,9 @@
 		DCC6490820FBF60E0012D27A /* Breaker */ = {
 			isa = PBXGroup;
 			children = (
+				DCC6491F20FC024E0012D27A /* GameUtils */,
+				DCC6491D20FC022C0012D27A /* Breaker.scnassets */,
 				DCC6490920FBF60E0012D27A /* AppDelegate.swift */,
-				DCC6490B20FBF60E0012D27A /* art.scnassets */,
 				DCC6490D20FBF60E0012D27A /* GameViewController.swift */,
 				DCC6490F20FBF60E0012D27A /* Main.storyboard */,
 				DCC6491220FBF6110012D27A /* Assets.xcassets */,
@@ -65,6 +74,17 @@
 				DCC6491720FBF6110012D27A /* Info.plist */,
 			);
 			path = Breaker;
+			sourceTree = "<group>";
+		};
+		DCC6491F20FC024E0012D27A /* GameUtils */ = {
+			isa = PBXGroup;
+			children = (
+				DCC6492020FC024E0012D27A /* SCNVector3+Extensions.swift */,
+				DCC6492120FC024E0012D27A /* GameUtils.swift */,
+				DCC6492220FC024E0012D27A /* GameHelper.swift */,
+				DCC6492320FC024E0012D27A /* SCNAction+Extensions.swift */,
+			);
+			path = GameUtils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,9 +145,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCC6490C20FBF60E0012D27A /* art.scnassets in Resources */,
 				DCC6491620FBF6110012D27A /* LaunchScreen.storyboard in Resources */,
 				DCC6491320FBF6110012D27A /* Assets.xcassets in Resources */,
+				DCC6491E20FC022D0012D27A /* Breaker.scnassets in Resources */,
 				DCC6491120FBF60E0012D27A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,7 +159,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCC6492620FC024E0012D27A /* GameHelper.swift in Sources */,
 				DCC6490E20FBF60E0012D27A /* GameViewController.swift in Sources */,
+				DCC6492720FC024E0012D27A /* SCNAction+Extensions.swift in Sources */,
+				DCC6492520FC024E0012D27A /* GameUtils.swift in Sources */,
+				DCC6492420FC024E0012D27A /* SCNVector3+Extensions.swift in Sources */,
 				DCC6490A20FBF60E0012D27A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
