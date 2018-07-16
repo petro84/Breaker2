@@ -16,6 +16,7 @@ class GameViewController: UIViewController {
     var horizontalCamera: SCNNode!
     var verticalCamera: SCNNode!
     var ballNode: SCNNode!
+    var paddleNode: SCNNode!
     
     var game = GameHelper.sharedInstance
     
@@ -45,6 +46,7 @@ class GameViewController: UIViewController {
         horizontalCamera = scnScene.rootNode.childNode(withName: "HorizontalCamera", recursively: true)!
         verticalCamera = scnScene.rootNode.childNode(withName: "VerticalCamera", recursively: true)!
         ballNode = scnScene.rootNode.childNode(withName: "Ball", recursively: true)!
+        paddleNode = scnScene.rootNode.childNode(withName: "Paddle", recursively: true)!
         
         scnScene.rootNode.addChildNode(game.hudNode)
     }
